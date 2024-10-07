@@ -16,17 +16,24 @@ import random
 
 def guessing_game():
     number = random.randint(0, 100)
+    remaining_guesses = 2
 
     while True:
         guess = int(input('Guess a number between 0 and 100: '))
+
+        if remaining_guesses == 0:
+            print('Sorry- you are out of guesses!')
+            break
 
         if guess == number:
             print(f'{guess} is exactly right!')
             break
 
         if guess > number:
+            remaining_guesses -= 1
             print(f'{guess} is too high')
         else:
+            remaining_guesses -= 1
             print(f'{guess} is too low')
 
 
