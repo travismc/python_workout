@@ -7,13 +7,13 @@
 # For this exercise, write a Python function (pig_latin) that takes a string as input, assumed to be an English word. The function should return the translation of this word into Pig Latin. You may assume that the word contains no capital letters or punctuation.
 
 def pig_latin(word: str) -> str:
-    if word[0] in 'aeiou':
+    if word[0].lower() in 'aeiou':
         return f'{word}way'
 
     return f'{word[1:]}{word[0]}ay'
 
 
 print(pig_latin('dresser'))
-print(pig_latin('apple'))
+print(pig_latin('Apple'))
 print(pig_latin('ostrich'))
 print(pig_latin('drama'))
