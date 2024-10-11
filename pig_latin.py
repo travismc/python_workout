@@ -8,12 +8,12 @@
 
 def pig_latin(word: str) -> str:
     if word[0].lower() in 'aeiou':
-        return f'{word}way'
+        return f'{word.lower()}way'
 
-    return f'{word[1:]}{word[0]}ay'
+    return f'{word[1:]}{word[0].lower()}ay'
 
 
 print(pig_latin('dresser'))
 print(pig_latin('Apple'))
 print(pig_latin('ostrich'))
-print(pig_latin('drama'))
+print(pig_latin('Drama'))
