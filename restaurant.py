@@ -4,8 +4,20 @@
 # If the user enters the name of a dish not on the menu, the program scolds the user (mildly). It then asks the user again for their order.
 # If the user enters an empty string, the program stops prompting and prints the total amount.
 
-MENU = {'sandwich': 10, 'tea': 7, 'salad': 9, 'soda': 6}
+MENU = {'sandwich': 10, 'tea': 7, 'salad': 9, 'soda': 6, 'pie': 8}
 
 
 def restaurant():
-    pass
+    order = []
+    total = []
+    if True:
+        if (input('Type "y" if you would like to add an item. Otherwise type "n".')) == 'y':
+            order.append(
+                input(f'What would you like to order? Choices are: {MENU.values}'))
+    for item in order:
+        total.append(order[item])
+
+    print(f'Your total is {sum(total)}')
+
+
+restaurant()
