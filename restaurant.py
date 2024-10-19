@@ -4,7 +4,7 @@
 # If the user enters the name of a dish not on the menu, the program scolds the user (mildly). It then asks the user again for their order.
 # If the user enters an empty string, the program stops prompting and prints the total amount.
 
-MENU = {}
+MENU = {'sandwich': 10, 'tea': 7, 'salad': 9, 'soda': 6}
 
 
 def restaurant():
