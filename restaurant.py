@@ -8,16 +8,22 @@ MENU = {'sandwich': 10, 'tea': 7, 'salad': 9, 'soda': 6, 'pie': 8}
 
 
 def restaurant():
-    order = []
-    total = []
-    if True:
-        if (input('Type "y" if you would like to add an item. Otherwise type "n".')) == 'y':
-            order.append(
-                input(f'What would you like to order? Choices are: {MENU.values}'))
-    for item in order:
-        total.append(order[item])
+    total = 0
+    while True:
+        order = input('Order: ').strip()
 
-    print(f'Your total is {sum(total)}')
+        if not order:
+            break
+
+        if order in MENU:
+            price = MENU[order]
+            total += price
+            print(f'{order} is {price}, total is {total}')
+
+        else:
+            print(f'We are fresh out of {order} today')
+
+    print(f'Your total is {total}')
 
 
 restaurant()
