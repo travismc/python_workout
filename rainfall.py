@@ -4,6 +4,5 @@
 
 # When the user enters a blank city name, the program exits--but first, it reports how much total rainfall there was in each city.
 
-
 def get_rainfall():
-    pass
+    rainfall = {}  # initiates empty dict to hold city, rain amount pairs
