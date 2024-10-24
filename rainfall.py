@@ -6,3 +6,18 @@
 
 def get_rainfall():
     rainfall = {}  # initiates empty dict to hold city, rain amount pairs
+    while True:
+        city = input('What city? ')
+        if not city:
+            break
+
+# TODO: change rain input block to .get() so that repeat city entries update value
+        rain = input('How much rain? ')
+        if not rainfall.get(city):
+            rainfall.update({city: float(rain)})
+
+    for k, v in rainfall.items():
+        print(f'{k}: {v}')
+
+
+get_rainfall()
