@@ -14,21 +14,29 @@
 def dictdiff(dict1, dict2):
     output = {}  # Create an empty output dict
 
-    for key in dict1:
-        if (key in dict2) and (dict1[key] != dict2[key]):
-            output.update({key: [dict1[key], dict2[key]]})
-        elif (key in dict2) and (dict1[key] == dict2[key]):
-            continue
-        elif key not in dict2:
-            output.update({key: None})
+    # for key in dict1:
+    #     if (key in dict2) and (dict1[key] != dict2[key]):
+    #         output.update({key: [dict1[key], dict2[key]]})
+    #     elif (key in dict2) and (dict1[key] == dict2[key]):
+    #         continue
+    #     elif key not in dict2:
+    #         output.update({key: None})
 
-    for key in dict2:
-        if (key in dict1) and (dict2[key] != dict1[key]):
-            output.update({key: [dict2[key], dict1[key]]})
-        elif (key in dict1) and (dict2[key] == dict1[key]):
-            continue
-        elif key not in dict1:
-            output.update({key: None})
+    # for key in dict2:
+    #     if (key in dict1) and (dict2[key] != dict1[key]):
+    #         output.update({key: [dict2[key], dict1[key]]})
+    #     elif (key in dict1) and (dict2[key] == dict1[key]):
+    #         continue
+    #     elif key not in dict1:
+    #         output.update({key: None})
+
+    # Optimized solution, fixes to add value when None in other dict:
+    all_keys = dict1.keys() | dict2.keys()
+
+    for key in all_keys:
+        if dict1.get(key) != dict2.get(key):
+            output[key] = [dict1.get(key),
+                           dict2.get(key)]
 
     return output
 
