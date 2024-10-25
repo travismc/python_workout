@@ -11,7 +11,6 @@ def get_rainfall():
         if not city:
             break
 
-# TODO: change rain input block to .get() so that repeat city entries update value
         rain = input('How much rain? ')
         rainfall[city] = rainfall.get(city, 0) + int(rain)
 
