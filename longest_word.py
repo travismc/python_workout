@@ -11,4 +11,5 @@ def find_longest_word(filename):
 
 
 def find_all_longest_words():
+    # need to return a dict in which the dict's keys are filenames and dict's values are the longest words in each file
     pass
