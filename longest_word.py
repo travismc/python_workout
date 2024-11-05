@@ -7,9 +7,16 @@ import os
 
 def find_longest_word(filename):
     longest_word = ""
-    pass
+    for one_line in open(filename):
+        for one_word in one_line.split():
+            if len(one_word) > len(longest_word):
+                longest_word = one_word
+    return longest_word
 
 
-def find_all_longest_words():
+def find_all_longest_words(dirname):
     # need to return a dict in which the dict's keys are filenames and dict's values are the longest words in each file
-    pass
+    return {filename: find_longest_word(os.path.join(dirname, filename)) for filename in os.listdir(dirname) if os.path.isfile(os.path.join(dirname, filename))}
+
+
+print(find_all_longest_words('books/.'))
