@@ -17,7 +17,9 @@ def find_longest_word(filename):
 def find_all_longest_words(dirname):
     # need to return a dict in which the dict's keys are filenames and dict's values are the longest words in each file
     # lesson has a dict comprehension returning
-    return {filename: find_longest_word(os.path.join(dirname, filename)) for filename in os.listdir(dirname) if os.path.isfile(os.path.join(dirname, filename))}
+    return {filename: find_longest_word(os.path.join(dirname, filename))
+            for filename in os.listdir(dirname)
+            if os.path.isfile(os.path.join(dirname, filename))}
 
 
 print(find_all_longest_words('books/.'))
