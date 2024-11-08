@@ -1,0 +1,1 @@
+# In this exercise, you’re analyzing test data in a high school. There’s a scores directory on the filesystem containing a number of files in JSON format. Each file represents the scores for one class. Write a function, print_scores, that takes a directory name as an argument and prints a summary of the student scores it finds.
